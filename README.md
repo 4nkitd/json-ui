@@ -2,6 +2,13 @@
 
 The `JsonUi` class provides a UI component for managing and interacting with hierarchical JSON data. It presents this data as a user-friendly interface with checkboxes and accordions for toggling and viewing different sections. The UI can be customized to use either the 'DaisyUI' or 'Bootstrap' CSS framework.
 
+## Demo
+------------------------------
+| From (json) | To ( Ui ) |
+|---|---|
+| ```json {   "nb": {     "abc": "Apple Bat Cat"   },   "debitcard": {     "visa_dc": "Visa Debit Card",     ...   },   ... } ``` | ![alt text](daisy.png) |
+
+
 ### Constructor
 
 ```typescript
