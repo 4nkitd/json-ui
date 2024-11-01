@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+        <script>
+            var Ui = null;
+
+            function save() {
+                let state = Ui.getUiState();
+                console.log(state);
+            }
+        </script>
+    </head>
+    <body>
+        <center>
+            <h1>dmeo</h1>
+
+            <br />
+            <button class="btn btn-primary" onclick="save()">Primary</button>
+            <br />
+
+            <div id="io-gits"></div>
+        </center>
+        <script type="module">
+            import { UiManager } from "./daisy.js";
+            fetch("sample.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    // Process the data from sample.json
+                    const uiManager = new UiManager(
+                        document.getElementById("io-gits"),
+                        data,
+                    );
+                    uiManager.render();
+                    console.log(uiManager);
+                    Ui = uiManager;
+                });
+        </script>
+    </body>
+</html>
